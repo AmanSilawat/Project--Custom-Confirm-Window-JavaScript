@@ -1,6 +1,8 @@
 const Confirm = {
     open(options) {
-        options = Object.assign({}, {
+
+        //Overwrite some properties
+        options = Object.assign({
             title: '',
             message: '',
             okText: 'OK',
@@ -25,11 +27,11 @@ const Confirm = {
         </div>
         `;
 
+        // Create template
         const template = document.createElement('template');
         template.innerHTML = html;
         
-        
-        // Elemnets 
+        // Get Elemnets through template element
         const confirmEl = template.content.querySelector('.confirm');
         const btnClose = template.content.querySelector('.confirm__close');
         const btnOk = template.content.querySelector('.confirm__button--ok');
@@ -63,6 +65,4 @@ const Confirm = {
             document.body.removeChild(confirmEl);
         })
     },
-
-    // ..
 }
